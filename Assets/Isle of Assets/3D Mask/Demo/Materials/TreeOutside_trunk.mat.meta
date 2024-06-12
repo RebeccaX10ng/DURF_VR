@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c502611eba6005844b88355d2b81b786
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 227655
+  packageName: 3D Mask (Built-in/URP)
+  packageVersion: 1.0.7
+  assetPath: Assets/Isle of Assets/3D Mask/Demo/Materials/TreeOutside_trunk.mat
+  uploadId: 616640

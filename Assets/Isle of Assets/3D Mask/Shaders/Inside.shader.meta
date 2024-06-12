@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1eb361ff6e40cd14c9002c590b6f7674
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 227655
+  packageName: 3D Mask (Built-in/URP)
+  packageVersion: 1.0.7
+  assetPath: Assets/Isle of Assets/3D Mask/Shaders/Inside.shader
+  uploadId: 616640
