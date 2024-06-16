@@ -5,13 +5,15 @@ using UnityEngine;
 public class ShadowVisibility : MonoBehaviour
 {
     public Transform player; 
-    public float threshold = 0.08f; 
+    public float threshold = 0.08f;
+    public GameObject mask;
     private Renderer objectRenderer;
     private bool isTriggered = false; 
     void Start()
     {
         objectRenderer = GetComponent<Renderer>();
         objectRenderer.enabled = false;
+        mask.SetActive(false);
     }
     
     void Update()
@@ -25,11 +27,13 @@ public class ShadowVisibility : MonoBehaviour
         if (distanceX <= threshold && distanceZ <= threshold)
         {
             objectRenderer.enabled = true;
+            mask.SetActive(true);
             isTriggered = true;
         }
         else
         {
             objectRenderer.enabled = false;
+            mask.SetActive(false);
         }  
     }
 }
