@@ -8,32 +8,25 @@ public class ShadowVisibility : MonoBehaviour
     public float threshold = 0.08f;
     public GameObject mask;
     private Renderer objectRenderer;
+    private Transform objectTransform;
     private bool isTriggered = false; 
     void Start()
     {
         objectRenderer = GetComponent<Renderer>();
+        objectTransform = transform;
         objectRenderer.enabled = false;
         mask.SetActive(false);
     }
     
     void Update()
     {
-        if (isTriggered)
-            return;
+        float distance = Vector3.Distance(objectTransform.position, player.position);
         
-        float distanceX = Mathf.Abs(transform.position.x - player.position.x);
-        float distanceZ = Mathf.Abs(transform.position.z - player.position.z);
-        
-        if (distanceX <= threshold && distanceZ <= threshold)
+        if (!isTriggered && distance <= threshold)
         {
             objectRenderer.enabled = true;
-            mask.SetActive(true);
             isTriggered = true;
         }
-        else
-        {
-            objectRenderer.enabled = false;
-            mask.SetActive(false);
-        }  
+        mask.SetActive(distance <= threshold);
     }
 }
