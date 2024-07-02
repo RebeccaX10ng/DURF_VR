@@ -7,6 +7,8 @@ TagManager:
   - Masked
   - Anchor
   - VR
+  - Judge Area
+  - Shadow
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - GameObject
   - Water
   - UI
-  - 
+  - top
   - 
   - 
   - 
