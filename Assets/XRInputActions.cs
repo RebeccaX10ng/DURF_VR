@@ -44,6 +44,24 @@ public partial class @XRInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlaceInPortal"",
+                    ""type"": ""Button"",
+                    ""id"": ""004368b8-64d6-4ef0-8fa4-f5c584b2144b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlaceOutPortal"",
+                    ""type"": ""Button"",
+                    ""id"": ""f67eb726-33b1-4067-94cb-723253a2ec0e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +86,28 @@ public partial class @XRInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Replay"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a82f9f9-f4b5-4523-bf13-75fa31df7717"",
+                    ""path"": ""<XRController>{LeftHand}/{PrimaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlaceInPortal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b97c1c3c-84a9-4aeb-b018-2c2308e0844d"",
+                    ""path"": ""<XRController>{LeftHand}/{SecondaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlaceOutPortal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -78,6 +118,8 @@ public partial class @XRInputActions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Record = m_Player.FindAction("Record", throwIfNotFound: true);
         m_Player_Replay = m_Player.FindAction("Replay", throwIfNotFound: true);
+        m_Player_PlaceInPortal = m_Player.FindAction("PlaceInPortal", throwIfNotFound: true);
+        m_Player_PlaceOutPortal = m_Player.FindAction("PlaceOutPortal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -141,12 +183,16 @@ public partial class @XRInputActions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Record;
     private readonly InputAction m_Player_Replay;
+    private readonly InputAction m_Player_PlaceInPortal;
+    private readonly InputAction m_Player_PlaceOutPortal;
     public struct PlayerActions
     {
         private @XRInputActions m_Wrapper;
         public PlayerActions(@XRInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Record => m_Wrapper.m_Player_Record;
         public InputAction @Replay => m_Wrapper.m_Player_Replay;
+        public InputAction @PlaceInPortal => m_Wrapper.m_Player_PlaceInPortal;
+        public InputAction @PlaceOutPortal => m_Wrapper.m_Player_PlaceOutPortal;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -162,6 +208,12 @@ public partial class @XRInputActions: IInputActionCollection2, IDisposable
             @Replay.started += instance.OnReplay;
             @Replay.performed += instance.OnReplay;
             @Replay.canceled += instance.OnReplay;
+            @PlaceInPortal.started += instance.OnPlaceInPortal;
+            @PlaceInPortal.performed += instance.OnPlaceInPortal;
+            @PlaceInPortal.canceled += instance.OnPlaceInPortal;
+            @PlaceOutPortal.started += instance.OnPlaceOutPortal;
+            @PlaceOutPortal.performed += instance.OnPlaceOutPortal;
+            @PlaceOutPortal.canceled += instance.OnPlaceOutPortal;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -172,6 +224,12 @@ public partial class @XRInputActions: IInputActionCollection2, IDisposable
             @Replay.started -= instance.OnReplay;
             @Replay.performed -= instance.OnReplay;
             @Replay.canceled -= instance.OnReplay;
+            @PlaceInPortal.started -= instance.OnPlaceInPortal;
+            @PlaceInPortal.performed -= instance.OnPlaceInPortal;
+            @PlaceInPortal.canceled -= instance.OnPlaceInPortal;
+            @PlaceOutPortal.started -= instance.OnPlaceOutPortal;
+            @PlaceOutPortal.performed -= instance.OnPlaceOutPortal;
+            @PlaceOutPortal.canceled -= instance.OnPlaceOutPortal;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -193,5 +251,7 @@ public partial class @XRInputActions: IInputActionCollection2, IDisposable
     {
         void OnRecord(InputAction.CallbackContext context);
         void OnReplay(InputAction.CallbackContext context);
+        void OnPlaceInPortal(InputAction.CallbackContext context);
+        void OnPlaceOutPortal(InputAction.CallbackContext context);
     }
 }
