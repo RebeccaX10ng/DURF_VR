@@ -17,15 +17,13 @@ public class PlacementJudge : MonoBehaviour
                 renderer.material = placedMaterial;
             }
             
-            transform.SetParent(other.transform);
+            PlacementManager manager = FindObjectOfType<PlacementManager>();
             
-            MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
-            foreach (MonoBehaviour script in scripts)
+            if (manager != null)
             {
-                script.enabled = false;
+                manager.CubePlaced(gameObject);
+                isPlaced = true;
             }
-
-            isPlaced = true; 
         }
     }
 }

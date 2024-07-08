@@ -11534,6 +11534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1339958543}
+  - component: {fileID: 1339958544}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
@@ -11559,6 +11560,26 @@ Transform:
   - {fileID: 1971176532}
   m_Father: {fileID: 952171529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1339958544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339958542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f297452b68e8b4da3dc568461a015c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadow: {fileID: 462437302}
+  placedMaterials:
+  - {fileID: 2100000, guid: 0ae4160534ba5194d9cd42f4a46c7052, type: 2}
+  - {fileID: 2100000, guid: 58e56b370e866b1448169bee6c59ad6b, type: 2}
+  objectsToActivate:
+  - {fileID: 0}
+  - {fileID: 0}
+  objectsToDeactivate: []
 --- !u!1 &1343623174
 GameObject:
   m_ObjectHideFlags: 0
