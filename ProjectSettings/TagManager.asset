@@ -9,6 +9,9 @@ TagManager:
   - VR
   - Judge Area
   - Shadow
+  - Collide
+  - Obstacle
+  - Portal
   layers:
   - Default
   - TransparentFX
