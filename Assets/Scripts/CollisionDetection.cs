@@ -4,11 +4,11 @@ public class CollisionDetection : MonoBehaviour
 {
     public string targetTag = "Obstacle";
     private bool isColliding = false;
-    private ScreenFade screenFade;
+    public GameObject TunnelingVignette;
 
     private void Start()
     {
-        screenFade = FindObjectOfType<ScreenFade>();
+        TunnelingVignette.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +16,7 @@ public class CollisionDetection : MonoBehaviour
         if (other.CompareTag(targetTag))
         {
             isColliding = true;
-            screenFade.FadeToBlack();
+           TunnelingVignette.SetActive(true);
             Debug.Log("Collision Detected");
         }
     }
@@ -26,7 +26,7 @@ public class CollisionDetection : MonoBehaviour
         if (other.CompareTag(targetTag))
         {
             isColliding = false;
-            screenFade.FadeToClear();
+            TunnelingVignette.SetActive(false);
         }
     }
 }
