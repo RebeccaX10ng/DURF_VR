@@ -12,7 +12,7 @@ public class MirrorCamera : MonoBehaviour
         Quaternion mainCamRotation = mainCamera.transform.rotation;
 
         // 计算镜像相机的位置
-        Vector3 mirrorCamPosition = new Vector3(-mainCamPosition.x - 1, mainCamPosition.y, mainCamPosition.z);
+        Vector3 mirrorCamPosition = new Vector3(-mainCamPosition.x - 1, mainCamPosition.y, mainCamPosition.z - 5);
 
         // 计算镜像相机的旋转
         Quaternion mirrorCamRotation = new Quaternion(-mainCamRotation.x, mainCamRotation.y, mainCamRotation.z, -mainCamRotation.w);
