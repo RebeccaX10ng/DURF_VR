@@ -2,53 +2,68 @@ using UnityEngine;
 
 public class PaintingAreaChecker : MonoBehaviour
 {
-    public GameObject[] objects; // 对象数组
-    public Collider[] targetColliders; // 目标区域数组
+    public GameObject targetObject; // 用于检测的目标物体
+    public Material newMaterial; // 新的材质
+    private Material originalMaterial; // 原来的材质
+    private bool isTargetInside = false;
+    private bool hasLoggedSuccess = false; // 状态变量，用于追踪日志消息是否已经发送
 
-    private bool[] objectsInTarget;
+    public bool IsTargetInside
+    {
+        get { return isTargetInside; }
+    }
 
     void Start()
     {
-        if (objects.Length != targetColliders.Length)
+        if (targetObject != null)
         {
-            Debug.LogError("Objects and targetColliders arrays must have the same length!");
-            return;
-        }
-
-        objectsInTarget = new bool[objects.Length];
-    }
-
-    void Update()
-    {
-        CheckAllObjectsInTargets();
-    }
-
-    private void CheckAllObjectsInTargets()
-    {
-        bool allInTarget = true;
-
-        for (int i = 0; i < objects.Length; i++)
-        {
-            if (!IsObjectFullyInTarget(i))
+            MeshRenderer renderer = targetObject.GetComponent<MeshRenderer>();
+            if (renderer != null)
             {
-                allInTarget = false;
-                // 添加调试信息
-                Debug.Log($"{objects[i].name} is not fully in target area.");
+                originalMaterial = renderer.material;
             }
         }
-
-        if (allInTarget)
+    }
+    
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject == targetObject)
         {
-            Debug.Log("Success! All objects are fully in their target areas.");
+            // 检查目标物体是否完全在触发器范围内
+            Collider targetCollider = targetObject.GetComponent<Collider>();
+            Bounds targetBounds = targetCollider.bounds;
+            Bounds triggerBounds = GetComponent<Collider>().bounds;
+
+            bool wasTargetInside = isTargetInside;
+            isTargetInside = triggerBounds.Contains(targetBounds.min) && triggerBounds.Contains(targetBounds.max);
+
+            // 只在目标物体完全进入范围且之前未进入范围时发出日志消息
+            if (isTargetInside && !wasTargetInside && !hasLoggedSuccess)
+            {
+                Debug.Log($"Success! {targetObject.name} is fully in the target area.");
+                hasLoggedSuccess = true;
+                
+                MeshRenderer renderer = targetObject.GetComponent<MeshRenderer>();
+                if (renderer != null && newMaterial != null)
+                {
+                    renderer.material = newMaterial;
+                }
+            }
         }
     }
 
-    private bool IsObjectFullyInTarget(int index)
+    private void OnTriggerExit(Collider other)
     {
-        Collider objectCollider = objects[index].GetComponent<Collider>();
-        Bounds objectBounds = objectCollider.bounds;
-        Bounds targetBounds = targetColliders[index].bounds;
-
-        return targetBounds.Contains(objectBounds.min) && targetBounds.Contains(objectBounds.max);
+        if (other.gameObject == targetObject)
+        {
+            isTargetInside = false;
+            hasLoggedSuccess = false; // 重置日志状态以便下一次进入时能够再次发出日志
+            
+            MeshRenderer renderer = targetObject.GetComponent<MeshRenderer>();
+            if (renderer != null && originalMaterial != null)
+            {
+                renderer.material = originalMaterial;
+            }
+        }
     }
 }
