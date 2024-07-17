@@ -4,7 +4,7 @@ using System.Collections;
 public class VRPortal : MonoBehaviour
 {
     public Transform destination;
-    public float cooldownTime = 3f; // 冷却时间
+    public float cooldownTime = 3f; 
 
     private bool canTeleport = true;
 
