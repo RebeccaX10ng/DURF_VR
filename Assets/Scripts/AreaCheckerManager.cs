@@ -4,7 +4,7 @@ public class AreaCheckerManager : MonoBehaviour
 {
     public PaintingAreaChecker[] areaCheckers; 
     public GameObject objectToHide; 
-    public CollisionTeleporter collisionTeleporter; 
+    public GameObject collisionTeleporter; 
 
     void Update()
     {
@@ -13,7 +13,7 @@ public class AreaCheckerManager : MonoBehaviour
 
     private void CheckAllAreas()
     {
-        bool allInTarget = true;
+        bool allInTarget = true; 
 
         foreach (var checker in areaCheckers)
         {
@@ -28,7 +28,7 @@ public class AreaCheckerManager : MonoBehaviour
         {
             Debug.Log("Success! All objects are in their target areas.");
             objectToHide.GetComponent<Renderer>().enabled = false;
-            collisionTeleporter.enabled = true;
+            collisionTeleporter.SetActive(true);
         }
     }
 }
