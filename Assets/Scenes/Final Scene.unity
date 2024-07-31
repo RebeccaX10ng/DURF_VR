@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.56178546, g: 0.57963485, b: 0.59748423, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.76
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: f2b5f3f20933f434e850db1b710542fd, type: 2}
@@ -123,112 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &5376455
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5376456}
-  - component: {fileID: 5376459}
-  - component: {fileID: 5376458}
-  - component: {fileID: 5376457}
-  m_Layer: 0
-  m_Name: glass
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5376456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5376455}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -1, y: 0.0044, z: -0.0009}
-  m_LocalScale: {x: -0.27420935, y: 0.3, z: 0.27343374}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1711390896}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 270}
---- !u!64 &5376457
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5376455}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5376458
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5376455}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: e3ab1abf03741b143874f7dff823e663, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &5376459
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5376455}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &20340841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -285,6 +179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65d72f624c2043e49820f63b50059e0f, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
       propertyPath: m_Name
       value: decorations_on_wall (5)
@@ -628,6 +526,89 @@ MonoBehaviour:
   - {fileID: 1122025656}
   scriptsToDisable:
   - {fileID: 1482983300}
+--- !u!1 &45317269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 45317270}
+  - component: {fileID: 45317272}
+  - component: {fileID: 45317271}
+  m_Layer: 0
+  m_Name: Painting frame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &45317270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45317269}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -1.032, y: 0.0137, z: 0.0206}
+  m_LocalScale: {x: 618.0671, y: 274.1823, z: 648.5068}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1711390896}
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!23 &45317271
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45317269}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 4611759551533685079, guid: 1941f431be57a6e4ba5bd2f64e96b37b, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &45317272
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45317269}
+  m_Mesh: {fileID: -800712209651529036, guid: 1941f431be57a6e4ba5bd2f64e96b37b, type: 3}
 --- !u!1 &46313351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +2003,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 10ff1c90cc4e106459428d6f8c91682b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 4611759551533685079, guid: 10ff1c90cc4e106459428d6f8c91682b, type: 3}
+      objectReference: {fileID: 2100000, guid: 98e7cbb1f0939ba4c8382226cf1724d6, type: 2}
     - target: {fileID: 919132149155446097, guid: 10ff1c90cc4e106459428d6f8c91682b, type: 3}
       propertyPath: m_Name
       value: paintings_with_fram
@@ -2251,6 +2232,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65d72f624c2043e49820f63b50059e0f, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
       propertyPath: m_Name
       value: decorations_on_wall (1)
@@ -2778,7 +2763,7 @@ GameObject:
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &204999244
 Transform:
@@ -2810,7 +2795,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2935,6 +2920,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5f76d132ab9706544989099639511e88, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c0d137275b35c1408b464c826722e6c, type: 2}
     - target: {fileID: 919132149155446097, guid: 5f76d132ab9706544989099639511e88, type: 3}
       propertyPath: m_Name
       value: human_face_sculptur
@@ -4886,6 +4875,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65d72f624c2043e49820f63b50059e0f, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
       propertyPath: m_Name
       value: decorations_on_wall (4)
@@ -5900,6 +5893,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f4533ab14ce465b49842b4bd5e32901d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 410188a69ca57f146ac1b822f259f964, type: 2}
     - target: {fileID: 919132149155446097, guid: f4533ab14ce465b49842b4bd5e32901d, type: 3}
       propertyPath: m_Name
       value: painting
@@ -8702,6 +8699,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b2d0f651a5151384283603d47fc4daaa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6da5c829848c9a5478d2a7f0062c60c5, type: 2}
     - target: {fileID: 919132149155446097, guid: b2d0f651a5151384283603d47fc4daaa, type: 3}
       propertyPath: m_Name
       value: painting
@@ -12007,6 +12008,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65d72f624c2043e49820f63b50059e0f, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
       propertyPath: m_Name
       value: decorations_on_wall (7)
@@ -12075,7 +12080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3bf62b80a932c754eb3c8584e6a83282, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.987
+      value: 1.489
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3bf62b80a932c754eb3c8584e6a83282, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12112,6 +12117,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3bf62b80a932c754eb3c8584e6a83282, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3bf62b80a932c754eb3c8584e6a83282, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3bf62b80a932c754eb3c8584e6a83282, type: 3}
       propertyPath: m_Name
@@ -12175,13 +12184,13 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828021753}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
-  m_Type: 0
+  m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 3.86
+  m_Range: 2.58
   m_SpotAngle: 73.06771
   m_InnerSpotAngle: 30
   m_CookieSize: 10
@@ -12189,10 +12198,10 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.799
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.33
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -13584,6 +13593,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 83156e50bba27cc408056e79d8394c9b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d7664b11364cca46ab11cef555ee540, type: 2}
     - target: {fileID: 919132149155446097, guid: 83156e50bba27cc408056e79d8394c9b, type: 3}
       propertyPath: m_Name
       value: painting
@@ -13615,7 +13628,7 @@ GameObject:
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &980285215
 Transform:
@@ -13647,7 +13660,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -14086,7 +14099,7 @@ GameObject:
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1051220783
 Transform:
@@ -14118,7 +14131,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -16025,6 +16038,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65d72f624c2043e49820f63b50059e0f, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
       propertyPath: m_Name
       value: decorations_on_wall
@@ -16490,6 +16507,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 83438384b03c33340990ec473bc51436, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f3d88fb0a93245446878c847ea3ecbf5, type: 2}
     - target: {fileID: 919132149155446097, guid: 83438384b03c33340990ec473bc51436, type: 3}
       propertyPath: m_Name
       value: window
@@ -17335,6 +17356,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65d72f624c2043e49820f63b50059e0f, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fdecaa92b3fd2c47b3ee420d13c917b, type: 3}
       propertyPath: m_Name
       value: decorations_on_wall (8)
@@ -19581,6 +19606,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c86a6fd018a94cd458da278099df8bd6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a1f4c753ca2ff644aac251ca2c4facb, type: 2}
     - target: {fileID: 919132149155446097, guid: c86a6fd018a94cd458da278099df8bd6, type: 3}
       propertyPath: m_Name
       value: paintings_with_fram
@@ -20580,6 +20609,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a6795e9569d3a7747a993fb7a500ba60, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 29ffac343c3cd4b40b748944ec3e1069, type: 2}
     - target: {fileID: 919132149155446097, guid: a6795e9569d3a7747a993fb7a500ba60, type: 3}
       propertyPath: m_Name
       value: human_face_sculptur
@@ -23162,7 +23195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3bf62b80a932c754eb3c8584e6a83282, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.987
+      value: 1.229
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3bf62b80a932c754eb3c8584e6a83282, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23255,7 +23288,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652691978}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -23909,7 +23942,7 @@ GameObject:
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1683269596
 Transform:
@@ -23941,7 +23974,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -24267,9 +24300,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1152292062}
-  - {fileID: 5376456}
   - {fileID: 469792694}
   - {fileID: 866483992}
+  - {fileID: 45317270}
   - {fileID: 2087785763}
   - {fileID: 1912716327}
   - {fileID: 1722228384}
@@ -25074,7 +25107,7 @@ GameObject:
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1806206019
 Transform:
@@ -25120,7 +25153,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806206018}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -26956,7 +26989,7 @@ GameObject:
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1921938659
 Transform:
@@ -26988,7 +27021,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
