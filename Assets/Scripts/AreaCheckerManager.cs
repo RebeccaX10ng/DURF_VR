@@ -4,7 +4,9 @@ public class AreaCheckerManager : MonoBehaviour
 {
     public PaintingAreaChecker[] areaCheckers; 
     public GameObject objectToHide; 
-    public GameObject collisionTeleporter; 
+    public GameObject collisionTeleporter;
+    public AudioSource audioSouce;
+    public AudioClip successSound;
 
     void Update()
     {
@@ -27,6 +29,7 @@ public class AreaCheckerManager : MonoBehaviour
         if (allInTarget)
         {
             Debug.Log("Success! All objects are in their target areas.");
+            audioSouce.PlayOneShot(successSound);
             objectToHide.GetComponent<Renderer>().enabled = false;
             collisionTeleporter.SetActive(true);
         }

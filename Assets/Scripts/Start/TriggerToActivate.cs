@@ -5,6 +5,8 @@ using UnityEngine;
 public class TriggerToActivate : MonoBehaviour
 {
     public GameObject[] objectsToActivate;
+    public AudioSource audioSource;
+    public AudioClip glassClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,7 @@ public class TriggerToActivate : MonoBehaviour
         {
             Debug.Log("Player activates objects");
             ActivateObjects();
+            audioSource.PlayOneShot(glassClip);
         }
     }// Update is called once per frame
 

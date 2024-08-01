@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: white
+  m_Name: whiteWallLong
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -29,11 +29,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: f3de873005453f94f9a09153da5fd5fb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5d8fd9178fcfa7246af577502299928c, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0.05, y: 0}
+        m_Offset: {x: 0, y: 0.05}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 3d7ddf8a596c9694698b29f4219a822e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1456b9d26cfa4b64a9be783da2d7edf5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -53,19 +53,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f3de873005453f94f9a09153da5fd5fb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5d8fd9178fcfa7246af577502299928c, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0.05, y: 0}
+        m_Offset: {x: 0, y: 0.05}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: b24843de78456d4409eabddfba9402e2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 427774753569e2e4f940de6de67ff3b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: f3de873005453f94f9a09153da5fd5fb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 179182ad1cafe1d49bba84d231bdc480, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 10e5053ce28cc1043b10320d2cc9d073, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5d8fd9178fcfa7246af577502299928c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -108,7 +108,7 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.56
+    - _Smoothness: 0.32
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -117,8 +117,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.9950773, b: 0.96540874, a: 1}
-    - _Color: {r: 1, g: 0.9950773, b: 0.96540874, a: 1}
+    - _BaseColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
+    - _Color: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
