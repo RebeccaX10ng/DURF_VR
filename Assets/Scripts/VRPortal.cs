@@ -10,6 +10,7 @@ public class VRPortal : MonoBehaviour
     
     //禁用传送后不用的东西
     public GameObject[] objectsToDeactivate;
+    public GameObject[] objectsToActivate;
     public MonoBehaviour[] scriptsToDisable;
 
     private bool canTeleport = true;
@@ -35,6 +36,13 @@ public class VRPortal : MonoBehaviour
             if (obj != null)
             {
                 obj.SetActive(false);  
+            }
+        }
+        foreach (GameObject obj in objectsToActivate)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(true);  
             }
         }
         foreach (MonoBehaviour script in scriptsToDisable)
