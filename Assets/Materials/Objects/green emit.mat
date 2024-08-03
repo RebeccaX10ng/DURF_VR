@@ -7,15 +7,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: dark green
+  m_Name: green emit
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHAPREMULTIPLY_ON
+  - _EMISSION
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -117,9 +118,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.31446534, b: 0.10482176, a: 0.9764706}
-    - _Color: {r: 0, g: 0.3144653, b: 0.10482172, a: 0.9764706}
-    - _EmissionColor: {r: 0.0038178065, g: 0.0032117693, b: 0.00062669633, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.34509805}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.34509805}
+    - _EmissionColor: {r: 0, g: 0.27044016, b: 0.036058716, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5113408750329327498

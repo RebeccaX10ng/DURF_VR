@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class CameraTransformAndRotation : MonoBehaviour
 {
     public Transform targetCamera;  // 目标相机的Transform
     public Vector3 positionOffset;  // 位置偏移
