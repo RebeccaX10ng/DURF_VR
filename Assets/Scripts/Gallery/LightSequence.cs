@@ -68,6 +68,7 @@ public class LightSequence : MonoBehaviour
     
     IEnumerator PlayLightSequence()
     {
+        RestoreOriginalMaterials();
         yield return new WaitForSeconds(initialDelay);
         
         foreach (var light in lights)
