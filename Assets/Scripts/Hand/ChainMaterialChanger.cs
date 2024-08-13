@@ -5,6 +5,9 @@ public class ChainMaterialChanger : MonoBehaviour
 {
     public Material newMaterial; // 新的材质
     public List<GameObject> objectsToCheck; // 要检测的其他物体列表
+    public GameObject independentObject; // 独立物体，用于旋转
+    public Light independentLight; // 独立物体上的Light组件
+    
     private bool isHandTouching = false; // 检查手是否在触摸
 
     private Dictionary<GameObject, Material> originalMaterials = new Dictionary<GameObject, Material>(); // 原始材质的字典
@@ -21,6 +24,15 @@ public class ChainMaterialChanger : MonoBehaviour
             }
         }
     }
+    
+    private void Update()
+    {
+        // 使独立物体旋转
+        if (independentObject != null)
+        {
+            independentObject.transform.Rotate(Vector3.up, 50 * Time.deltaTime);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,6 +42,12 @@ public class ChainMaterialChanger : MonoBehaviour
             isHandTouching = true;
             ChangeMaterial(gameObject, newMaterial);
             CheckAndChangeConnectedMaterials(gameObject);
+            
+            if (AllObjectsAffected())
+            {
+                // 启动协程来平滑地增加Light的intensity
+                StartCoroutine(IncreaseLightIntensity(independentLight, 5000f, 2f));
+            }
         }
     }
 
@@ -83,6 +101,37 @@ public class ChainMaterialChanger : MonoBehaviour
                     CheckAndChangeConnectedMaterials(obj);
                 }
             }
+        }
+    }
+    
+    private bool AllObjectsAffected()
+    {
+        // 检查所有列表中的物体是否都已改变材质
+        foreach (var obj in objectsToCheck)
+        {
+            if (!affectedObjects.Contains(obj))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private System.Collections.IEnumerator IncreaseLightIntensity(Light light, float targetIntensity, float duration)
+    {
+        if (light != null)
+        {
+            float startIntensity = light.intensity;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < duration)
+            {
+                light.intensity = Mathf.Lerp(startIntensity, targetIntensity, elapsedTime / duration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            light.intensity = targetIntensity; // 确保最终达到目标强度
         }
     }
 }
