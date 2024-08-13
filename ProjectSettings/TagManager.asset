@@ -12,6 +12,8 @@ TagManager:
   - Collide
   - Obstacle
   - Portal
+  - Block
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -20,9 +22,9 @@ TagManager:
   - Water
   - UI
   - No Light
-  - 
-  - 
-  - 
+  - collision1
+  - collision2
+  - collision3
   - 
   - 
   - 
