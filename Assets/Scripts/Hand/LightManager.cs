@@ -7,16 +7,16 @@ public class LightManager : MonoBehaviour
     public AudioSource audioSource; // 用于播放音频的AudioSource
     public AudioClip initialClip; // 第一个要播放的音频片段
     public AudioClip loopClip; // 要循环播放的音频片段
-    public GameObject disable;
-    public GameObject enable;
-
+    public GameObject disable; // 要禁用的对象
+    public GameObject enable; // 要启用的对象
+    public AudioSource alarm; // 报警音效的AudioSource
     private bool hasBeenTriggered = false; // 标记函数是否已经被触发
 
     void Start()
     {
         ChangeLightsAndPlayAudio();
     }
-    
+
     // Public函数，用于改变灯光颜色并播放音频
     public void ChangeLightsAndPlayAudio()
     {
@@ -30,21 +30,29 @@ public class LightManager : MonoBehaviour
                     light.color = Color.red; // 改变灯光颜色为红色
                 }
             }
-            
+
             disable.SetActive(false);
             enable.SetActive(true);
 
-            // 启用并播放音频
-            if (audioSource != null && initialClip != null)
-            {
-                audioSource.clip = initialClip;
-                audioSource.Play();
+            alarm.Play();
 
-                // 监听第一个音频片段播放完毕
-                Invoke(nameof(PlayLoopClip), initialClip.length);
-            }
+            // 延迟播放 initialClip
+            Invoke(nameof(PlayInitialClip), 3f);
 
             hasBeenTriggered = true; // 标记为已触发，确保函数只执行一次
+        }
+    }
+
+    // 在延迟3秒后调用该函数来播放 initialClip
+    private void PlayInitialClip()
+    {
+        if (audioSource != null && initialClip != null)
+        {
+            audioSource.clip = initialClip;
+            audioSource.Play();
+
+            // 监听第一个音频片段播放完毕
+            Invoke(nameof(PlayLoopClip), initialClip.length);
         }
     }
 

@@ -19,11 +19,15 @@ public class LightSequence : MonoBehaviour
     private bool isThirdRound = false;
 
     public AudioSource soundEffectAudioSource;
+    public AudioSource notice;
     public AudioClip success;
     public AudioClip failure;
     public GameObject door;
     public GameObject tag; 
     public GameObject wall;
+    public GameObject trigger;
+
+    private bool firstFailure = true;
     
     private Dictionary<GameObject, Material> originalMaterials = new Dictionary<GameObject, Material>();
 
@@ -106,6 +110,7 @@ public class LightSequence : MonoBehaviour
                 {
                     Debug.Log("Third round complete!");
                     wall.SetActive(false);
+                    trigger.SetActive(true);
                 }
             }
         }
@@ -115,6 +120,11 @@ public class LightSequence : MonoBehaviour
             EnableInteraction(false);
             Debug.Log("Failure! Player clicked the wrong object.");
             soundEffectAudioSource.PlayOneShot(failure);
+            if (firstFailure)
+            {
+                notice.Play();
+                firstFailure = false;
+            }
             RestoreOriginalMaterials();
             StartCoroutine(PlayLightSequence());
         }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using WaitForSeconds = UnityEngine.WaitForSeconds;
 
 public class ChangeLevel : MonoBehaviour
 {
@@ -29,36 +30,36 @@ public class ChangeLevel : MonoBehaviour
         {
             objectToActivate.SetActive(true);
         }
-        
-        // 移动物体
-        float elapsedTime = 0f;
-        Vector3 startPosition;
-        Vector3 endPosition;
+
+        yield return new WaitForSeconds(1f);
 
         foreach (GameObject obj in objectsToMove)
         {
-            startPosition = obj.transform.position;
-            endPosition = startPosition + Vector3.up * moveAmount;
-
-            while (elapsedTime < moveDuration)
-            {
-                obj.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / moveDuration);
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-
-            obj.transform.position = endPosition; // 确保最终位置准确
-            elapsedTime = 0f; // 重置时间
+            StartCoroutine(MoveObject(obj));
         }
 
-        // 禁用物体
+        audioSource1.Play();
+        audioSource2.Play();
+
+    }
+    private IEnumerator MoveObject(GameObject obj){
+        
+        float elapsedTime = 0f;
+        Vector3 startPosition = obj.transform.position;
+        Vector3 endPosition = startPosition + Vector3.up * moveAmount;
+
+        while (elapsedTime < moveDuration)
+        {
+            obj.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / moveDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        obj.transform.position = endPosition; // 确保最终位置准确
+        
         if (objectToDisable != null)
         {
             objectToDisable.SetActive(false);
         }
-        
-        audioSource1.Play();
-        audioSource2.Play();
-       
     }
 }

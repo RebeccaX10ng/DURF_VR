@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class ChainMaterialChanger : MonoBehaviour
@@ -7,6 +8,10 @@ public class ChainMaterialChanger : MonoBehaviour
     public List<GameObject> objectsToCheck; // 要检测的其他物体列表
     public GameObject independentObject; // 独立物体，用于旋转
     public Light independentLight; // 独立物体上的Light组件
+    public AudioSource earRinging;
+
+    public GameObject level;
+    public GameObject end;
     
     private bool isHandTouching = false; // 检查手是否在触摸
 
@@ -46,7 +51,7 @@ public class ChainMaterialChanger : MonoBehaviour
             if (AllObjectsAffected())
             {
                 // 启动协程来平滑地增加Light的intensity
-                StartCoroutine(IncreaseLightIntensity(independentLight, 5000f, 2f));
+                StartCoroutine(IncreaseLightIntensity(independentLight, 10000f, 2.5f));
             }
         }
     }
@@ -123,6 +128,8 @@ public class ChainMaterialChanger : MonoBehaviour
         {
             float startIntensity = light.intensity;
             float elapsedTime = 0f;
+            
+            earRinging.Play();
 
             while (elapsedTime < duration)
             {
@@ -132,6 +139,11 @@ public class ChainMaterialChanger : MonoBehaviour
             }
 
             light.intensity = targetIntensity; // 确保最终达到目标强度
+
+            yield return new WaitForSeconds(2f);
+            
+            level.SetActive(false);
+            end.SetActive(true);
         }
     }
 }

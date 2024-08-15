@@ -9,7 +9,7 @@ public class LightController : MonoBehaviour
     // Public function to start the intensity transition
     void Start()
     {
-        StartCoroutine(AdjustLightIntensity(targetLight, 0.08f, 1.5f));
+        StartCoroutine(AdjustLightIntensity(targetLight, 0.08f, 2f));
     }
 
     // Coroutine to gradually change the light intensity

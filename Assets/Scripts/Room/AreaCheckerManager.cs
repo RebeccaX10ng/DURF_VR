@@ -7,6 +7,7 @@ public class AreaCheckerManager : MonoBehaviour
     public GameObject collisionTeleporter;
     public AudioSource audioSouce;
     public AudioClip successSound;
+    private bool hasPlayed = false;
 
     void Update()
     {
@@ -29,8 +30,15 @@ public class AreaCheckerManager : MonoBehaviour
         if (allInTarget)
         {
             Debug.Log("Success! All objects are in their target areas.");
-            audioSouce.PlayOneShot(successSound);
-            objectToHide.GetComponent<Renderer>().enabled = false;
+            
+            if (!hasPlayed)
+            {
+                audioSouce.PlayOneShot(successSound);
+                hasPlayed = true;
+            }
+
+            objectToHide.SetActive(false);
+                
             collisionTeleporter.SetActive(true);
         }
     }
