@@ -49,6 +49,17 @@ public class PaintingAreaChecker : MonoBehaviour
                     renderer.material = newMaterial;
                 }
             }
+            else if (!isTargetInside && wasTargetInside)
+            {
+                Debug.Log($"{targetObject.name} is partially outside the target area.");
+                hasLoggedSuccess = false; // 重置日志状态
+                
+                MeshRenderer renderer = targetObject.GetComponent<MeshRenderer>();
+                if (renderer != null && originalMaterial != null)
+                {
+                    renderer.material = originalMaterial;
+                }
+            }
         }
     }
 
