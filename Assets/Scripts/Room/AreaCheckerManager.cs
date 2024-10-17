@@ -29,12 +29,11 @@ public class AreaCheckerManager : MonoBehaviour
 
         if (allInTarget)
         {
-            Debug.Log("Success! All objects are in their target areas.");
-            
             if (!hasPlayed)
             {
                 audioSouce.PlayOneShot(successSound);
                 hasPlayed = true;
+                Debug.Log("Success! All objects are in their target areas.");
             }
 
             objectToHide.SetActive(false);
