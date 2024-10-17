@@ -37,8 +37,7 @@ public class TeleportEffect : MonoBehaviour
             teleport = false;
         }
     }
-
-    // 切换到下一个 Global Volume，并保持当前效果的数值
+    
     private void SetVolumeProfile(VolumeProfile profile)
     {
         if (targetVolume != null)
@@ -56,12 +55,40 @@ public class TeleportEffect : MonoBehaviour
             originalChromaticAberration = chromaticAberration.intensity.value;
         }
     }
-
+    
     // 切换到下一个 Global Volume
     private void SwitchToNextVolume()
     {
+        int previousProfileIndex = currentProfileIndex;
+        
         currentProfileIndex = (currentProfileIndex + 1) % globalProfiles.Count;  // 循环切换
         SetVolumeProfile(globalProfiles[currentProfileIndex]);
+        
+        StartCoroutine(RestorePreviousVolumeProfile(previousProfileIndex));
+    }
+    
+    private System.Collections.IEnumerator RestorePreviousVolumeProfile(int profileIndex)
+    {
+        // 假设你想在切换之后等待 2 秒再还原
+        yield return new WaitForSeconds(2f);
+
+        // 获取之前的 VolumeProfile
+        VolumeProfile previousProfile = globalProfiles[profileIndex];
+
+        // 还原之前 Profile 的效果值
+        if (previousProfile.TryGet(out ColorAdjustments previousColorAdjustments))
+        {
+            previousColorAdjustments.postExposure.value = originalExposure;
+        }
+        if (previousProfile.TryGet(out LensDistortion previousLensDistortion))
+        {
+            previousLensDistortion.intensity.value = originalLensDistortionIntensity;
+            previousLensDistortion.scale.value = originalLensDistortionScale;
+        }
+        if (previousProfile.TryGet(out ChromaticAberration previousChromaticAberration))
+        {
+            previousChromaticAberration.intensity.value = originalChromaticAberration;
+        }
     }
 
     System.Collections.IEnumerator TeleportEffectRoutine()
