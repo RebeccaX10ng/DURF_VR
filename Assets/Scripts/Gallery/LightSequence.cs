@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class LightSequence : MonoBehaviour
 {
@@ -173,7 +173,7 @@ public class LightSequence : MonoBehaviour
     {
         foreach (var obj in clickableObjects)
         {
-            var interactionScript = obj.GetComponent<XRGrabInteractable>();
+            var interactionScript = obj.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
             if (interactionScript != null)
             {
                 interactionScript.enabled = enable;

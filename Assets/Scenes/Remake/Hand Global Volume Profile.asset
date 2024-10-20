@@ -68,16 +68,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.99507064, z: 0.8918552, w: 0}
+    m_Value: {x: 0.96857196, y: 0.7439948, z: 1, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.9387376, y: 0.9132897, z: 1, w: 0}
+    m_Value: {x: 0.9781482, y: 1, z: 0.9275242, w: 0}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9372584, z: 0.26277274, w: -0.0000007248662}
+    m_Value: {x: 1, y: 0.9617465, z: 0.39306545, w: -0.0000007248662}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0.17
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   color:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
@@ -159,10 +159,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.922
+    m_Value: 0.525
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.171
+    m_Value: 0.56
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -178,22 +178,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 5.38
+    m_Value: -4.8
   contrast:
-    m_OverrideState: 0
-    m_Value: -27
-  colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.83299655, b: 0.76415086, a: 1}
+    m_Value: 5
+  colorFilter:
+    m_OverrideState: 0
+    m_Value: {r: 0.3333333, g: 0.3333333, b: 0.3333333, a: 1}
   hueShift:
     m_OverrideState: 1
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: -26
+    m_Value: -100
 --- !u!114 &7115036256080280575
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -212,19 +212,19 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 9.29
+    m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 6.9
+    m_Value: 0.44
   scatter:
     m_OverrideState: 1
-    m_Value: 0.329
+    m_Value: 0.651
   clamp:
     m_OverrideState: 0
     m_Value: 65472
   tint:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.8732167, b: 0.29874206, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -235,9 +235,9 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 6
   dirtTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 2800000, guid: 25d5671330de9f04b8446663529bfcd1, type: 3}
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 2f3bcc6962171554184fb25dfd6c213b, type: 3}
     dimension: 1
   dirtIntensity:
-    m_OverrideState: 0
-    m_Value: 17.6
+    m_OverrideState: 1
+    m_Value: 1.9
