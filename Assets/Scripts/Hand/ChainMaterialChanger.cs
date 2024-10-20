@@ -1,26 +1,28 @@
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class ChainMaterialChanger : MonoBehaviour
 {
-    public Material newMaterial; // 新的材质
-    public List<GameObject> objectsToCheck; // 要检测的其他物体列表
-    public GameObject independentObject; // 独立物体，用于旋转
-    //public Light independentLight; // 独立物体上的Light组件
-    //public AudioSource earRinging;
-
-    //public GameObject level;
-    //public GameObject end;
+    public Material newMaterial; 
+    public List<GameObject> objectsToCheck; 
+    public GameObject independentObject; 
+    public Light independentLight;
+    public GameObject teleportTrigger;
     
-    private bool isHandTouching = false; // 检查手是否在触摸
+    //private ColorAdjustments colorAdjustments;
+    
+    //public Volume globalVolume; 
+    
+    private bool isHandTouching = false; 
 
-    private Dictionary<GameObject, Material> originalMaterials = new Dictionary<GameObject, Material>(); // 原始材质的字典
-    private HashSet<GameObject> affectedObjects = new HashSet<GameObject>(); // 已经改变材质的物体
+    private Dictionary<GameObject, Material> originalMaterials = new Dictionary<GameObject, Material>(); 
+    private HashSet<GameObject> affectedObjects = new HashSet<GameObject>(); 
 
     private void Start()
     {
-        // 保存每个物体的原始材质
         foreach (var obj in objectsToCheck)
         {
             if (obj != null && obj.GetComponent<Renderer>() != null)
@@ -32,7 +34,6 @@ public class ChainMaterialChanger : MonoBehaviour
     
     private void Update()
     {
-        // 使独立物体旋转
         if (independentObject != null)
         {
             independentObject.transform.Rotate(Vector3.up, 50 * Time.deltaTime);
@@ -43,15 +44,13 @@ public class ChainMaterialChanger : MonoBehaviour
     {
         if (other.CompareTag("Hand"))
         {
-            // 当手触碰到第一个物体时，开始改变材质
             isHandTouching = true;
             ChangeMaterial(gameObject, newMaterial);
             CheckAndChangeConnectedMaterials(gameObject);
             
             if (AllObjectsAffected())
             {
-                // 启动协程来平滑地增加Light的intensity
-                //StartCoroutine(IncreaseLightIntensity(independentLight, 10000f, 2.5f));
+                StartCoroutine(IncreaseLightIntensity(independentLight, 10000f, 2.5f));
             }
         }
     }
@@ -60,7 +59,6 @@ public class ChainMaterialChanger : MonoBehaviour
     {
         if (other.CompareTag("Hand"))
         {
-            // 当手离开时，恢复所有物体的原始材质
             isHandTouching = false;
             RevertMaterials();
         }
@@ -72,7 +70,7 @@ public class ChainMaterialChanger : MonoBehaviour
         if (renderer != null)
         {
             renderer.material = material;
-            affectedObjects.Add(obj); // 将已改变材质的物体加入集合
+            affectedObjects.Add(obj); 
         }
     }
 
@@ -85,16 +83,15 @@ public class ChainMaterialChanger : MonoBehaviour
                 var renderer = obj.GetComponent<Renderer>();
                 if (renderer != null)
                 {
-                    renderer.material = originalMaterials[obj]; // 还原为各自的原始材质
+                    renderer.material = originalMaterials[obj]; 
                 }
             }
         }
-        affectedObjects.Clear(); // 清空集合
+        affectedObjects.Clear();
     }
 
     private void CheckAndChangeConnectedMaterials(GameObject currentObj)
     {
-        // 检查当前物体是否与列表中的其他物体有碰撞
         foreach (var obj in objectsToCheck)
         {
             if (obj != null && obj != currentObj && !affectedObjects.Contains(obj))
@@ -102,7 +99,6 @@ public class ChainMaterialChanger : MonoBehaviour
                 if (obj.GetComponent<Collider>().bounds.Intersects(currentObj.GetComponent<Collider>().bounds))
                 {
                     ChangeMaterial(obj, newMaterial);
-                    // 递归检查连接的物体
                     CheckAndChangeConnectedMaterials(obj);
                 }
             }
@@ -111,7 +107,6 @@ public class ChainMaterialChanger : MonoBehaviour
     
     private bool AllObjectsAffected()
     {
-        // 检查所有列表中的物体是否都已改变材质
         foreach (var obj in objectsToCheck)
         {
             if (!affectedObjects.Contains(obj))
@@ -129,8 +124,6 @@ public class ChainMaterialChanger : MonoBehaviour
             float startIntensity = light.intensity;
             float elapsedTime = 0f;
             
-            //earRinging.Play();
-
             while (elapsedTime < duration)
             {
                 light.intensity = Mathf.Lerp(startIntensity, targetIntensity, elapsedTime / duration);
@@ -138,12 +131,11 @@ public class ChainMaterialChanger : MonoBehaviour
                 yield return null;
             }
 
-            light.intensity = targetIntensity; // 确保最终达到目标强度
+            light.intensity = targetIntensity;
 
             yield return new WaitForSeconds(2f);
             
-            //level.SetActive(false);
-            //end.SetActive(true);
+            teleportTrigger.SetActive(true);
         }
     }
 }
