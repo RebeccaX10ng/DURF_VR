@@ -22,9 +22,9 @@ public class CollisionManager : MonoBehaviour
         }
 
         // 检查特殊物体是否与至少两个Block碰撞
-        if (specialObject.IsCollidingWithTwoBlocks)
+        //if (specialObject.IsCollidingWithTwoBlocks)
         {
-            Debug.Log("All conditions met!");
+          //  Debug.Log("All conditions met!");
         }
     }
 }

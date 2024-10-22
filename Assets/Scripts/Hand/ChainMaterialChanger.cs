@@ -12,10 +12,6 @@ public class ChainMaterialChanger : MonoBehaviour
     public Light independentLight;
     public GameObject teleportTrigger;
     
-    //private ColorAdjustments colorAdjustments;
-    
-    //public Volume globalVolume; 
-    
     private bool isHandTouching = false; 
 
     private Dictionary<GameObject, Material> originalMaterials = new Dictionary<GameObject, Material>(); 
@@ -50,6 +46,7 @@ public class ChainMaterialChanger : MonoBehaviour
             
             if (AllObjectsAffected())
             {
+                teleportTrigger.SetActive(true);
                 StartCoroutine(IncreaseLightIntensity(independentLight, 10000f, 2.5f));
             }
         }
@@ -134,8 +131,6 @@ public class ChainMaterialChanger : MonoBehaviour
             light.intensity = targetIntensity;
 
             yield return new WaitForSeconds(2f);
-            
-            teleportTrigger.SetActive(true);
         }
     }
 }

@@ -14,7 +14,7 @@ public class TeleportEffect : MonoBehaviour
     private ChromaticAberration chromaticAberration;
 
     private bool teleport = false;
-    private float originalExposure;
+    //private float originalExposure;
     private float originalLensDistortionIntensity;
     private float originalLensDistortionScale;
     private float originalChromaticAberration;
@@ -49,7 +49,7 @@ public class TeleportEffect : MonoBehaviour
             profile.TryGet(out lensDistortion) &&
             profile.TryGet(out chromaticAberration))
         {
-            originalExposure = colorAdjustments.postExposure.value;
+            //originalExposure = colorAdjustments.postExposure.value;
             originalLensDistortionIntensity = lensDistortion.intensity.value;
             originalLensDistortionScale = lensDistortion.scale.value;
             originalChromaticAberration = chromaticAberration.intensity.value;
@@ -74,12 +74,7 @@ public class TeleportEffect : MonoBehaviour
 
         // 获取之前的 VolumeProfile
         VolumeProfile previousProfile = globalProfiles[profileIndex];
-
-        // 还原之前 Profile 的效果值
-        if (previousProfile.TryGet(out ColorAdjustments previousColorAdjustments))
-        {
-            previousColorAdjustments.postExposure.value = originalExposure;
-        }
+        
         if (previousProfile.TryGet(out LensDistortion previousLensDistortion))
         {
             previousLensDistortion.intensity.value = originalLensDistortionIntensity;
@@ -106,7 +101,7 @@ public class TeleportEffect : MonoBehaviour
             lensDistortion.intensity.value = Mathf.Lerp(originalLensDistortionIntensity, -0.5f, progress);  
             lensDistortion.scale.value = Mathf.Lerp(originalLensDistortionScale, 0.8f, progress);  
             chromaticAberration.intensity.value = Mathf.Lerp(originalChromaticAberration, 1f, progress);
-            colorAdjustments.postExposure.value = Mathf.Lerp(originalExposure, 10f, progress);
+            //colorAdjustments.postExposure.value = Mathf.Lerp(originalExposure, 10f, progress);
 
             yield return null;
         }
@@ -116,7 +111,7 @@ public class TeleportEffect : MonoBehaviour
         lensDistortion.intensity.value = -0.5f;
         lensDistortion.scale.value = 0.8f;
         chromaticAberration.intensity.value = 1f;
-        colorAdjustments.postExposure.value = 10f;
+        //colorAdjustments.postExposure.value = 10f;
 
         // 短暂保持效果
         yield return new WaitForSeconds(0.5f);
@@ -130,7 +125,7 @@ public class TeleportEffect : MonoBehaviour
             float progress = elapsedTime / duration;
 
             // 恢复到原始效果
-            colorAdjustments.postExposure.value = Mathf.Lerp(10f, originalExposure, progress);
+            //colorAdjustments.postExposure.value = Mathf.Lerp(10f, originalExposure, progress);
             lensDistortion.intensity.value = Mathf.Lerp(-0.5f, originalLensDistortionIntensity, progress);
             lensDistortion.scale.value = Mathf.Lerp(0.8f, originalLensDistortionScale, progress);
             chromaticAberration.intensity.value = Mathf.Lerp(1f, originalChromaticAberration, progress);

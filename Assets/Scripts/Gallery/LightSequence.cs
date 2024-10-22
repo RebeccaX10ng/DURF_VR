@@ -10,7 +10,8 @@ public class LightSequence : MonoBehaviour
     public List<GameObject> materialChangeObjects;
     public float lightOnDuration = 1.0f; 
     public float delayBetweenLights = 0.5f; 
-    public float initialDelay = 2.0f; 
+    public float initialDelay = 2.0f;
+    public float durationDecreaseFactor = 0.7f;
     
     private int currentIndex = 0; 
     private bool isCorrectSequence = true;
@@ -19,7 +20,7 @@ public class LightSequence : MonoBehaviour
     private bool isThirdRound = false;
 
     public AudioSource soundEffectAudioSource;
-    public AudioSource notice;
+    //public AudioSource notice;
     public AudioClip success;
     public AudioClip failure;
     public GameObject door;
@@ -98,6 +99,10 @@ public class LightSequence : MonoBehaviour
                 Debug.Log("Success! Player clicked the correct sequence.");
                 EnableInteraction(false);
                 soundEffectAudioSource.PlayOneShot(success);
+
+                lightOnDuration *= durationDecreaseFactor;
+                delayBetweenLights *= durationDecreaseFactor;
+                
                 if (!isSecondRound)
                 {
                     ActivateObjectAndStartSecondRound();
@@ -122,7 +127,6 @@ public class LightSequence : MonoBehaviour
             soundEffectAudioSource.PlayOneShot(failure);
             if (firstFailure)
             {
-                notice.Play();
                 firstFailure = false;
             }
             RestoreOriginalMaterials();
