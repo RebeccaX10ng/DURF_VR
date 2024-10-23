@@ -11,6 +11,7 @@ public class ChainMaterialChanger : MonoBehaviour
     public GameObject independentObject; 
     public Light independentLight;
     public GameObject teleportTrigger;
+    public AudioSource touchingSound;
     
     private bool isHandTouching = false; 
 
@@ -69,6 +70,7 @@ public class ChainMaterialChanger : MonoBehaviour
             renderer.material = material;
             affectedObjects.Add(obj); 
         }
+        touchingSound.Play();
     }
 
     private void RevertMaterials()

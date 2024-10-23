@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AutoDisable : MonoBehaviour
 {
-    public float disableDelay = 2f; 
+    public float disableDelay = 3f; 
     
     void OnEnable()
     {

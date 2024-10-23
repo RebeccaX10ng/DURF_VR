@@ -136,7 +136,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   scale:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.01
 --- !u!114 &5604277090541454160
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -152,7 +152,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -1.76
   contrast:
     m_OverrideState: 0
     m_Value: -14
