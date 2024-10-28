@@ -20,7 +20,7 @@ public class AreaCheckerManager : MonoBehaviour
 
         foreach (var checker in areaCheckers)
         {
-            if (!checker.IsTargetInside)
+            if (!checker.isTargetInside)
             {
                 allInTarget = false;
                 break;
