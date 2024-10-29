@@ -12530,8 +12530,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0019072626, y: 0.0052643027, z: 0.006423378}
-  m_Center: {x: 0.00036254886, y: 0.000015223665, z: 0.000060691862}
+  m_Size: {x: 0.0019072626, y: 0.0006063013, z: 0.00054689695}
+  m_Center: {x: 0.00036254886, y: -0.0020922348, z: -0.002548443}
 --- !u!1 &544158929
 GameObject:
   m_ObjectHideFlags: 0
@@ -12935,8 +12935,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0016564653, y: 0.0042878836, z: 0.006011839}
-  m_Center: {x: 0.00022620433, y: -0.00008522824, z: -0.0001632102}
+  m_Size: {x: 0.00048226732, y: 0.0011386111, z: 0.0012975993}
+  m_Center: {x: -0.00003266166, y: 0.000116269875, z: 0.000008855972}
 --- !u!1 &564467301
 GameObject:
   m_ObjectHideFlags: 0
@@ -19049,7 +19049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &838542952
 Transform:
   m_ObjectHideFlags: 0
@@ -21232,8 +21232,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0010854412, y: 0.006439884, z: 0.0048521403}
-  m_Center: {x: 0.00013912817, y: 0.00017568041, z: 0.000056642057}
+  m_Size: {x: 0.0010854411, y: 0.00055423327, z: 0.0005185002}
+  m_Center: {x: 0.00013912817, y: -0.0024235747, z: 0.0011004033}
 --- !u!1 &1017015635
 GameObject:
   m_ObjectHideFlags: 0
@@ -31364,7 +31364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1472199914
 Transform:
   m_ObjectHideFlags: 0
@@ -33655,8 +33655,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00081564154, y: 0.004715221, z: 0.006426654}
-  m_Center: {x: 0.00009252574, y: 0.00007625359, z: -0.0003838838}
+  m_Size: {x: 0.00041269464, y: 0.00027983182, z: 0.00024685136}
+  m_Center: {x: -0.00010894757, y: -0.000032751206, z: -0.0027600704}
 --- !u!1 &1620446064
 GameObject:
   m_ObjectHideFlags: 0
@@ -35526,7 +35526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1711390896
 Transform:
   m_ObjectHideFlags: 0
@@ -36443,8 +36443,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.006993214, y: 0.0031139753, z: 0.0028956418}
-  m_Center: {x: -0.00012296028, y: -0.0005600922, z: 0.000038607956}
+  m_Size: {x: 0.0002480025, y: 0.0031139753, z: 0.0008085257}
+  m_Center: {x: 0.002563822, y: -0.0005600922, z: 0.0006229497}
 --- !u!1 &1782826929
 GameObject:
   m_ObjectHideFlags: 0
@@ -39373,7 +39373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1912716327
 Transform:
   m_ObjectHideFlags: 0
@@ -39401,7 +39401,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912716326}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e5eac751c8c5544db8b1d1947faa69d, type: 3}
   m_Name: 
@@ -44345,7 +44345,7 @@ Transform:
   m_GameObject: {fileID: 919132148963223968}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3052216, y: 0.62, z: 0.4449997}
+  m_LocalPosition: {x: 2.3052216, y: 0.62, z: 0.208}
   m_LocalScale: {x: 214.50157, y: 214.50157, z: 214.50157}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44470,7 +44470,7 @@ Transform:
   m_GameObject: {fileID: 919132148640901771}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3038793, y: 0.247, z: -0.9289999}
+  m_LocalPosition: {x: 2.3038793, y: -0.065, z: -1.013}
   m_LocalScale: {x: 204.46252, y: 204.46255, z: 204.46255}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48350,6 +48350,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -49229,6 +49241,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -50056,6 +50080,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -50230,6 +50266,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -50391,6 +50439,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
