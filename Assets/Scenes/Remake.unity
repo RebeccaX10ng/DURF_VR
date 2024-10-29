@@ -7801,7 +7801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 7105672249057194649}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 1
@@ -7946,7 +7946,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
+  m_FarAttachMode: 2
 --- !u!54 &351138777
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13882,7 +13882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 7105672249057194649}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 1
@@ -14039,7 +14039,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 0
-  m_FarAttachMode: 0
+  m_FarAttachMode: 2
 --- !u!54 &598746063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28780,13 +28780,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_GroupName: Left
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 7105672249057194649}
   m_StartingGroupMembers:
   - {fileID: 2417358720795623960}
   - {fileID: 2442306273140947732}
   m_StartingInteractionOverridesMap:
   - groupMember: {fileID: 2417358720795623960}
-    overrideGroupMembers: []
+    overrideGroupMembers:
+    - {fileID: 2442306273140947732}
 --- !u!114 &1368184634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41953,7 +41954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 7105672249057194649}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 1
@@ -42122,7 +42123,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 0
-  m_FarAttachMode: 0
+  m_FarAttachMode: 2
 --- !u!54 &2099909166
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45638,7 +45639,7 @@ MonoBehaviour:
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_TargetNumCurveSegments: 1
-  m_HitDetectionType: 2
+  m_HitDetectionType: 0
   m_CastDistance: 10
   m_SphereCastRadius: 0.1
   m_ConeCastAngle: 6
@@ -47375,7 +47376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a07ef133a37d140a87cdf1f1c75fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 7105672249057194649}
   m_InteractionLayers:
     m_Bits: 1
   m_Handedness: 1
@@ -47503,7 +47504,7 @@ MonoBehaviour:
   m_EnableFarCasting: 1
   m_FarInteractionCaster: {fileID: 1255647619215549734}
   m_FarAttachMode: 1
-  m_EnableUIInteraction: 1
+  m_EnableUIInteraction: 0
   m_BlockUIOnInteractableSelection: 1
   m_UIHoverEntered:
     m_PersistentCalls:
@@ -48575,7 +48576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 7105672249057194649}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 1
@@ -48720,7 +48721,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
+  m_FarAttachMode: 2
 --- !u!54 &3469287837220035085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50769,7 +50770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a07ef133a37d140a87cdf1f1c75fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 7105672249057194649}
   m_InteractionLayers:
     m_Bits: 1
   m_Handedness: 2
@@ -51945,7 +51946,7 @@ MonoBehaviour:
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_TargetNumCurveSegments: 1
-  m_HitDetectionType: 2
+  m_HitDetectionType: 0
   m_CastDistance: 10
   m_SphereCastRadius: 0.1
   m_ConeCastAngle: 6
